@@ -21,7 +21,9 @@
 	<url/>
 
 	<licenses>
-		<license/>
+		<license>
+			<name>PROPRIETARY</name>
+		</license>
 	</licenses>
 
 	<developers>
