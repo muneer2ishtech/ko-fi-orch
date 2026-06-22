@@ -37,3 +37,7 @@ Data Orchestration Service for synchronizing files between external systems and 
 ```
 ./mvnw spring-boot:run
 ```
+
+### Docker
+
+- See [DOCKER-BUILD.md](./DOCKER-BUILD.md)
