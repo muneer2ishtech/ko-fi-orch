@@ -1,3 +1,4 @@
+### Docs ###
 HELP.md
 
 ### Maven ###
@@ -52,3 +53,4 @@ pom.xml.versionsBackup
 
 ### Local ###
 .DS_Store
+Thumbs.db
