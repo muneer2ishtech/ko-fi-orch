@@ -16,9 +16,12 @@
 	<artifactId>ko-fi-orch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name/>
-	<description/>
-	<url/>
+	<name>ko-fi-orch</name>
+	<description>
+		Data orchestration service that queries external source systems,
+		downloads files, obtains presigned upload URLs, and transfers files to
+		cloud storage.
+	</description>
 
 	<licenses>
 		<license>
@@ -27,14 +30,18 @@
 	</licenses>
 
 	<developers>
-		<developer/>
+		<developer>
+			<name>Muneer Ahmed Syed</name>
+			<url>https://github.com/muneer2ishtech</url>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+		</developer>
 	</developers>
 
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<url>https://github.com/muneer2ishtech/springboot-multi-port</url>
 	</scm>
 
 	<properties>
