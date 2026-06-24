@@ -36,6 +36,10 @@ Data Orchestration Service for synchronizing files between external systems and 
 
 - See [INTEGRATION-TESTS.md](./INTEGRATION-TESTS.md)
 
+### Unit tests
+
+- See [UNIT-TESTS.md](./UNIT-TESTS.md)
+
 #### Local Maven Run
 
 ```
