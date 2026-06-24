@@ -32,6 +32,10 @@ Data Orchestration Service for synchronizing files between external systems and 
 ./mvnw clean install
 ```
 
+### Integration tests
+
+- See [INTEGRATION-TESTS.md](./INTEGRATION-TESTS.md)
+
 #### Local Maven Run
 
 ```
