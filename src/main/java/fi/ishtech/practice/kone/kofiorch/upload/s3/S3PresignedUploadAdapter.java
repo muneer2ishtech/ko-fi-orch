@@ -54,6 +54,8 @@ public class S3PresignedUploadAdapter implements UploadPort {
 				request.contentType(resolveContentType(file.contentType()));
 			}
 
+			// RestClient throws on non-2xx (e.g. 400, 500);
+			// caught below as UploadResult.failure
 			request.body(file.content())
 				.retrieve()
 				.toBodilessEntity();
