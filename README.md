@@ -5,11 +5,28 @@ Data Orchestration Service for synchronizing files between external systems and 
 ## Tech stack
 - Java: 25
 - Spring Boot: 4.0.x
+- API docs: Springdoc OpenAPI (Swagger UI)
 - Containerization: Docker
 
 ## Repository
 
 [GitHub](https://github.com/muneer2ishtech/ko-fi-orch)
+
+## APIs
+
+- For details you can see swagger documentation
+    - [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+    - [http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
+    - [http://localhost:8080/v3/api-docs.yaml](http://localhost:8080/v3/api-docs.yaml)
+
+- Note: Check and update URI and PORT on which application is running
+
+| Module | Type   | HTTP | URL      | Description |
+|--------|--------|------|----------|-------------|
+| Upload | Upload | POST | /upload  | Query source files by criteria and upload to object storage |
+
+- For `curl` and JSON request/response samples:
+    - See [CURL-INFO.md](./CURL-INFO.md)
 
 ## Build and Run
 
