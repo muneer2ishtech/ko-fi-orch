@@ -1,5 +1,6 @@
 package fi.ishtech.practice.kone.kofiorch.upload.s3;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
@@ -45,7 +46,7 @@ public class S3PresignedUploadAdapter implements UploadPort {
 	@Override
 	public UploadResult upload(FileHandle file, PresignedUrl presignedUrl) {
 		try {
-			RestClient.RequestBodySpec request = restClient.put().uri(presignedUrl.url());
+			RestClient.RequestBodySpec request = restClient.put().uri(URI.create(presignedUrl.url()));
 
 			if (!presignedUrl.signedHeaders().isEmpty()) {
 				request.headers(headers -> applySignedHeaders(headers, presignedUrl.signedHeaders()));
