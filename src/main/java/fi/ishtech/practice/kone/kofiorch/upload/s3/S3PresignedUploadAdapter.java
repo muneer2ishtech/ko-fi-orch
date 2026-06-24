@@ -26,10 +26,22 @@ public class S3PresignedUploadAdapter implements UploadPort {
 
 	private final RestClient restClient;
 
+	/**
+	 * Creates the adapter.
+	 *
+	 * @param restClient HTTP client used for presigned PUT requests
+	 */
 	public S3PresignedUploadAdapter(RestClient restClient) {
 		this.restClient = restClient;
 	}
 
+	/**
+	 * Uploads file bytes to the presigned URL.
+	 *
+	 * @param file         file content to upload
+	 * @param presignedUrl presigned URL and optional signed headers
+	 * @return success or failure result; HTTP errors are not thrown
+	 */
 	@Override
 	public UploadResult upload(FileHandle file, PresignedUrl presignedUrl) {
 		try {
@@ -52,6 +64,12 @@ public class S3PresignedUploadAdapter implements UploadPort {
 		}
 	}
 
+	/**
+	 * Copies signed headers onto the request.
+	 *
+	 * @param headers       mutable request headers
+	 * @param signedHeaders headers required by the presigned URL
+	 */
 	private void applySignedHeaders(HttpHeaders headers, Map<String, List<String>> signedHeaders) {
 		signedHeaders.forEach((name, values) -> {
 			if ("host".equalsIgnoreCase(name)) {
@@ -61,6 +79,12 @@ public class S3PresignedUploadAdapter implements UploadPort {
 		});
 	}
 
+	/**
+	 * Resolves the content type for the PUT request.
+	 *
+	 * @param contentType MIME type from the file, may be blank
+	 * @return resolved {@link MediaType}, defaulting to octet-stream
+	 */
 	private MediaType resolveContentType(String contentType) {
 		if (contentType == null || contentType.isBlank()) {
 			return MediaType.APPLICATION_OCTET_STREAM;
