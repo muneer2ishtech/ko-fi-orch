@@ -1,16 +1,19 @@
 ### Docs ###
-HELP.md
+LICENSE
+*.md
+!**/src/main/**/*.md
+!**/src/test/**/*.md
 
 ### Maven ###
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!.mvn/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### Gradle ###
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+!gradle/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -54,3 +57,14 @@ pom.xml.versionsBackup
 ### Local ###
 .DS_Store
 Thumbs.db
+
+### Git ###
+.git
+**/.gitignore
+.gitattributes
+.gitlab-ci.yml
+.github
+
+### Docker ###
+Dockerfile
+.dockerignore
