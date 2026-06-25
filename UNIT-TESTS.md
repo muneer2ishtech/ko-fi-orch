@@ -62,6 +62,15 @@ Unit tests run **without** external APIs or Docker. Dependencies are mocked (`Mo
 
 **Gaps:** HTTP 4xx/5xx from source API
 
+#### `RestUploadPresignUrlAdapterTest`
+
+| Test | Type | What it verifies |
+|------|------|------------------|
+| `presignsUploadUrlForFile` | Happy | `POST /api/v1/presigned-upload-urls`; maps URL and signed headers |
+| `presignsUploadUrlWithoutSignedHeaders` | Happy | Empty signed headers when omitted in response |
+| `defaultsContentTypeWhenMissing` | Happy | Sends `application/octet-stream` when file content type is blank |
+| `throwsWhenUploadApiRespondsWithError` | Negative | HTTP 500 → `RestClientException` |
+
 #### `RestSourceDownloadAdapterTest`
 
 | Test | Type | What it verifies |
@@ -105,7 +114,8 @@ Unit tests run **without** external APIs or Docker. Dependencies are mocked (`Mo
 | `FileUploadOrchestratorImplTest` | 1 | 0 |
 | `RestSourceQueryAdapterTest` | 3 | 0 |
 | `RestSourceDownloadAdapterTest` | 2 | 1 |
+| `RestUploadPresignUrlAdapterTest` | 3 | 1 |
 | `S3PresignUrlAdapterTest` | 2 | 0 |
 | `S3PresignedUploadAdapterTest` | 1 | 1 |
 | `S3UploadServiceTest` | 1 | 0 |
-| **Total** | **12** | **5** |
+| **Total** | **15** | **6** |

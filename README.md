@@ -57,6 +57,11 @@ Data Orchestration Service for synchronizing files between external systems and 
 
 - See [UNIT-TESTS.md](./UNIT-TESTS.md)
 
+### External APIs
+
+- PDM/PLM source API — configured via `ko-fi-orch.source.base-url`
+- Upload API (presigned URLs) — see [UPLOAD-API.md](./UPLOAD-API.md)
+
 #### Local Maven Run
 
 ```
