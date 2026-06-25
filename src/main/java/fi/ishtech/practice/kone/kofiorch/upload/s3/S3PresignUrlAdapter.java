@@ -1,7 +1,5 @@
 package fi.ishtech.practice.kone.kofiorch.upload.s3;
 
-import org.springframework.stereotype.Component;
-
 import fi.ishtech.practice.kone.kofiorch.config.S3Properties;
 import fi.ishtech.practice.kone.kofiorch.domain.FileHandle;
 import fi.ishtech.practice.kone.kofiorch.domain.PresignedUrl;
@@ -13,8 +11,8 @@ import software.amazon.awssdk.services.s3.presigner.model.PutObjectPresignReques
 
 /**
  * Generates S3 presigned PUT URLs using the AWS SDK {@link S3Presigner}.
+ * Used in tests and LocalStack integration; not registered as a Spring bean.
  */
-@Component
 public class S3PresignUrlAdapter implements PresignUrlPort {
 
 	private final S3Presigner s3Presigner;
