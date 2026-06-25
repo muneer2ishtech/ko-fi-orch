@@ -14,7 +14,7 @@
 
 	<groupId>fi.ishtech.practice.kone</groupId>
 	<artifactId>ko-fi-orch</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0</version>
 
 	<name>ko-fi-orch</name>
 	<description>
