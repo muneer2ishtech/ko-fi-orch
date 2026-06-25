@@ -21,6 +21,7 @@ COPY --from=build /app/target/ko-fi-orch-*.jar ko-fi-orch.jar
 # For building image with custom ports and properties
 ARG SERVER_PORT=8080
 ENV SERVER_PORT=${SERVER_PORT}
+ENV SPRING_PROFILES_ACTIVE=dev
 
 EXPOSE ${SERVER_PORT}
 

@@ -5,5 +5,5 @@
   _| |_\__ \ | | | |  __/ (__| | | |   | |\ \ (_) | | | |  __/
  |_____|___/_| |_|_|\___|\___|_| |_|   |_| \_\___/|_| |_|\___|
                                                              
-IshTech Kone ${application.version:${spring.application.version:}}
+${application.version:${spring.application.version:}}
 Powered by Spring Boot ${spring-boot.version}

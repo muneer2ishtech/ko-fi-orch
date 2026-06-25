@@ -1,6 +1,6 @@
 #
 
-- Default port: `8080` (see `application.properties` or [DOCKER-BUILD.md](./DOCKER-BUILD.md))
+- Default port: `8080`
 - Note: Check and update host and port on which the application is running
 
 - For API names and descriptions:

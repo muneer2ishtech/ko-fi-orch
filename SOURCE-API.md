@@ -2,7 +2,7 @@
 
 PDM/PLM source system — query file metadata and download file content. ko-fi-orch does **not** host this API; it calls it as a client.
 
-- Configuration: `ko-fi-orch.source.base-url` in `application.properties`
+- Configuration: `ko-fi-orch.source.base-url` in `application-xxx.properties`
 - Default: `http://localhost:9090` (override with env `SOURCE_API_BASE_URL`)
 - Implementation: `RestSourceQueryAdapter` (`SourceQueryPort`), `RestSourceDownloadAdapter` (`SourceDownloadPort`)
 
