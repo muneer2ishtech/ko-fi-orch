@@ -6,8 +6,6 @@ import fi.ishtech.practice.kone.kofiorch.domain.UploadResult;
 
 /**
  * Uploads file content to a storage destination using a presigned URL.
- * Implementations isolate the specifics of the destination (e.g. S3) from
- * orchestration logic.
  */
 public interface UploadPort {
 
@@ -17,8 +15,8 @@ public interface UploadPort {
 	 *
 	 * @param file         file content to upload
 	 * @param presignedUrl presigned URL to upload to
-	 * @return result of the upload attempt; never throws for upload failures,
-	 *         they are reported via {@link UploadResult#succeeded()}
+	 * @return result of the upload attempt; upload failures are reported via
+	 *         {@link UploadResult#succeeded()} rather than thrown
 	 */
 	UploadResult upload(FileHandle file, PresignedUrl presignedUrl);
 }

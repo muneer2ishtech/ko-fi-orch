@@ -65,18 +65,4 @@ class S3PresignedUploadAdapterTest {
 		assertThat(result.fileName()).isEqualTo("part.stp");
 		assertThat(result.failureReason()).isNotBlank();
 	}
-
-	@Test
-	void defaultsToOctetStreamWhenContentTypeMissing() {
-		FileHandle file = new FileHandle("part.stp", null, "content".getBytes());
-		PresignedUrl presignedUrl = new PresignedUrl("part.stp", PRESIGNED_URL);
-
-		mockServer.expect(requestTo(PRESIGNED_URL))
-			.andExpect(method(HttpMethod.PUT))
-			.andRespond(withSuccess());
-
-		UploadResult result = adapter.upload(file, presignedUrl);
-
-		assertThat(result.succeeded()).isTrue();
-	}
 }

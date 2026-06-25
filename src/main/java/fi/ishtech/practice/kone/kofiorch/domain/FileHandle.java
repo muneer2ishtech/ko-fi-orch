@@ -1,9 +1,9 @@
 package fi.ishtech.practice.kone.kofiorch.domain;
 
 /**
- * Downloaded file content ready to be uploaded.
+ * File content ready to be uploaded to object storage.
  *
- * @param fileName    name of the file, used as the upload key
+ * @param fileName    object key / file name used for the upload
  * @param contentType MIME type of the file content
  * @param content     raw file bytes
  */
