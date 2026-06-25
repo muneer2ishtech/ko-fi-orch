@@ -2,7 +2,7 @@
 
 The orchestration service obtains **presigned S3 upload URLs** from an external upload API (not by calling AWS directly).
 
-- Configuration: `ko-fi-orch.upload-api.base-url` in `application.properties`
+- Configuration: `ko-fi-orch.upload-api.base-url` in `application-xxx.properties`
 - Default: `http://localhost:9091` (override with env `UPLOAD_API_BASE_URL`)
 - Implementation: `RestUploadPresignUrlAdapter` (`PresignUrlPort`)
 

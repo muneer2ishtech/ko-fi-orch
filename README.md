@@ -60,8 +60,7 @@ Key decisions and rationale (concise):
 
 ## Build and Run
 
-- Ensure settings are correct in `application.properties`
-  - or profile-specific files such as `application-<profile>.properties`
+- Ensure settings are correct in `application-xxx.properties`
 
 ### Maven
 
@@ -97,7 +96,7 @@ Assumed contracts for systems **called by** `ko-fi-orch`
 #### Local Maven Run
 
 ```
-./mvnw spring-boot:run
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
 
 ### Docker
