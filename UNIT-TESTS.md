@@ -48,9 +48,13 @@ Unit tests run **without** external APIs or Docker. Dependencies are mocked (`Mo
 
 | Test | Type | What it verifies |
 |------|------|------------------|
-| `returnsEmptyResponseUntilSourceIntegrationIsWired` | Happy | Stub orchestrator returns empty `succeeded` / `failed` |
+| `returnsEmptyResponseWhenNoFilesMatch` | Happy | No source files → empty response; no download |
+| `uploadsAllMatchingFiles` | Happy | Query → download → presign → upload for each file |
+| `recordsFailureWhenDownloadFails` | Negative | Download error → failed list; no presign |
+| `recordsFailureWhenUploadFails` | Negative | Upload failure → failed list with reason |
+| `continuesProcessingAfterOneFileFails` | Happy | One file fails; others still processed |
 
-**Gaps:** failure paths when source query, download, presign, or upload fail (needs orchestration wiring)
+**Gaps:** presign failure case
 
 #### `RestSourceQueryAdapterTest`
 
@@ -111,11 +115,11 @@ Unit tests run **without** external APIs or Docker. Dependencies are mocked (`Mo
 |------------|------:|---------:|
 | `KoFiOrchApplicationTests` | 1 | 0 |
 | `UploadControllerTest` | 1 | 3 |
-| `FileUploadOrchestratorImplTest` | 1 | 0 |
+| `FileUploadOrchestratorImplTest` | 3 | 2 |
 | `RestSourceQueryAdapterTest` | 3 | 0 |
 | `RestSourceDownloadAdapterTest` | 2 | 1 |
 | `RestUploadPresignUrlAdapterTest` | 3 | 1 |
 | `S3PresignUrlAdapterTest` | 2 | 0 |
 | `S3PresignedUploadAdapterTest` | 1 | 1 |
 | `S3UploadServiceTest` | 1 | 0 |
-| **Total** | **15** | **6** |
+| **Total** | **17** | **8** |
