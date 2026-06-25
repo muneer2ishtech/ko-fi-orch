@@ -12,6 +12,20 @@ Data Orchestration Service for synchronizing files between external systems and 
 
 [GitHub](https://github.com/muneer2ishtech/ko-fi-orch)
 
+## Flow
+
+PDM/PLM files are queried from a source system, then uploaded to S3 via presigned URLs:
+
+```
+Client → POST /upload (ko-fi-orch)
+           → Source API (external): query + download
+           → Presign URL API (external): get presigned URL
+           → S3: HTTP PUT using that URL
+           → response: succeeded / failed per file
+```
+
+- External API contracts: see [External APIs](#external-apis) below
+
 ## APIs
 
 - For details you can see swagger documentation
