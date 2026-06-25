@@ -1,4 +1,4 @@
-## Upload API (external)
+## Presign URL API (external)
 
 The orchestration service obtains **presigned S3 upload URLs** from an external upload API (not by calling AWS directly).
 
